@@ -13,7 +13,7 @@ import pandas as pd
 password = os.getenv("PGPASSWORD")
 
 # Build the SQLAlchemy connection string
-db_name = "cosmetology"
+db_name = "bmedina"
 user = "bmedina"
 host = "dbserver.gctaa.net"
 port = "5432"
@@ -24,7 +24,7 @@ connection_string = f"postgresql+psycopg://{user}:{password}@{host}:{port}/{db_n
 engine = create_engine(connection_string)
 
 # Execute a query using Pandas
-query = "select * from foods f JOIN food_types t on f.type_id=t.id limit 10;"
+query = "select * from ucca_web_stoves;"
 df = pd.read_sql_query(query, engine)
 
 # Display or save the DataFrame
